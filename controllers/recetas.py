@@ -8,6 +8,7 @@ from dtos.paginacion_dto import PaginacionRequestDTO
 from config import conexion
 from math import ceil
 class RecetasController(Resource):
+
     def post(self):
         body = request.get_json()
         try:
@@ -17,7 +18,8 @@ class RecetasController(Resource):
                 estado = data.get('estado'),
                 comensales = data.get('comensales'),
                 duracion = data.get('duracion'),
-                dificultad = data.get('dificultad')
+                dificultad = data.get('dificultad'),
+                imagen = data.get('imagen')
             )
          
             conexion.session.add(nuevaReceta)
@@ -35,7 +37,6 @@ class RecetasController(Resource):
                 'message':'Error al crear la receta',
                 'content': e.args
             }
-
     def get(self):
       # TODO: agrega paginacion
       query_params = request.args

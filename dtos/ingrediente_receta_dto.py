@@ -6,6 +6,9 @@ class IngredientesRecetasRequestDTO(validador.SQLAlchemyAutoSchema):
     class Meta:
         model = IngredientesRecetas
         include_fk = True
+        
+
+
 
 
 

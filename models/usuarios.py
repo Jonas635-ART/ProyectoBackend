@@ -15,7 +15,8 @@ class Usuario(conexion.Model):
     def encriptar_pwd(self):
         # primero el password lo convierto a bytes
         password_bytes = bytes(self.password, 'utf-8')
-        # usamos el metodo gensalt para generar un hash aleatorio y este se combinara con mi contraseña para generar un nuevo hash que ese sera el que guardaremos en la bd
+        # usamos el metodo gensalt para generar un hash aleatorio y este se combinara con mi contraseña 
+        # para generar un nuevo hash que ese sera el que guardaremos en la bd
         salt = gensalt(rounds=10)
         hash_password = hashpw(password_bytes, salt)
         # ahora lo convierto a string para poder guardarlo en la bd

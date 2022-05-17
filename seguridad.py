@@ -1,8 +1,10 @@
 from config import conexion
 from models.usuarios import Usuario
 from bcrypt import checkpw
+
 def autenticador(username, password):
-    """Funcion encargada de validar si las credenciales son correctas o no, si no son no pasara pero si si lo son retornara una JWT"""
+    """Funcion encargada de validar si las credenciales son correctas o no, si no son no pasara 
+    pero si si lo son retornara una JWT"""
     # primero valido si los parametros son correctos
     if username and password:
         # buscare el usuario en la bd

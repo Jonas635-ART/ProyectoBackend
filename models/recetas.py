@@ -10,7 +10,7 @@ class Receta(conexion.Model):
     dificultad = Column(type_=types.Enum('FACIL', 'INTERMEDIO',
     'DIFICIL', 'EXTREMO'),
     default= 'FACIL')
-
+    imagen = Column(type_=types.String)
     __tablename__='recetas'
 
 

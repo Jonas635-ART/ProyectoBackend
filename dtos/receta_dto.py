@@ -18,6 +18,7 @@ class BuscarRecetaRequestDTO(validador.Schema):
     comensales = fields.Integer(required=False)
     dificultad = fields.String(required=False, validate=validate.OneOf(choices=['FACIL', 'INTERMEDIO', 
     'DIFICIL', 'EXTREMO']))
+    imagen = fields.String(required=False)
 
 
 class PreparacionResponseDTO(validador.SQLAlchemyAutoSchema):
